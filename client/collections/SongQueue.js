@@ -10,13 +10,10 @@ var SongQueue = Backbone.Collection.extend({
   },
 
   playFirst: function() {
-    // call play on the first (only) item in the collection
     this.at(0).play();
   },
 
   handleAddSong: function(model, collection, options) {
-    // if it's the only song in the queue,
-    // we'll play it.
     if (collection.length === 1) {
       this.playFirst();
     }

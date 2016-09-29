@@ -35,4 +35,13 @@ describe('SongQueueView', function() {
     expect(view.render).to.have.been.called;
   });
 
+  it('dequeue clicked songs', function() {
+    sinon.spy(SongModel.prototype, 'dequeue');
+    view = new SongQueueView({collection: fakeSongs});
+    view.render();
+    view.$el.find('li').first().click();
+    expect(fakeSongs.at(0).dequeue).to.have.been.called;
+    SongModel.prototype.dequeue.restore();
+  });
+
 });
