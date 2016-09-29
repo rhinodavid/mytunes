@@ -10,12 +10,16 @@ var AppView = Backbone.View.extend({
     this.model.on('change:currentSong', function(model) {
       this.playerView.setSong(model.get('currentSong'));
     }, this);
-
+    this.$el.on('keyup', '#search-bar', function(e) {
+      this.model.set('searchString', e.target.value);
+    }.bind(this));
   },
 
   render: function() {
+    var $searchBar = $('<input type = "text" placeholder = "search"></input>').attr('id', 'search-bar');
     return this.$el.html([
-      this.playerView.$el,
+      this.playerView.$el, 
+      $searchBar,
       this.libraryView.$el,
       this.songQueueView.$el
     ]);

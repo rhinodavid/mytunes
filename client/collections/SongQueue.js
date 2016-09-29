@@ -10,8 +10,6 @@ var SongQueue = Backbone.Collection.extend({
   },
 
   playFirst: function() {
-    console.log('playFirst called');
-    console.log(this.at(0));
     this.at(0).play();
   },
 

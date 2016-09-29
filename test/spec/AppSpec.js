@@ -32,4 +32,8 @@ describe('App', function() {
     expect(app.get('songQueue').at(0)).to.equal(app.get('library').at(1));
   });
 
+  it ('should have a search string property', function() {
+    expect(app.get('searchString')).to.exist;
+  });
+
 });
