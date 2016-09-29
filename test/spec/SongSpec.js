@@ -30,4 +30,14 @@ describe('SongModel', function() {
     model.ended();
     expect(model.trigger).to.have.been.calledWith('ended', model);
   });
+
+  it('has a playCount attribute', function() {
+    expect(model.get('playCount')).to.equal(0);
+  });
+
+  it('should increment playCount when a song ends', function() {
+    model.play();
+    model.ended();
+    expect(model.get('playCount')).to.equal(1);
+  });
 });

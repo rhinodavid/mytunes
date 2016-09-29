@@ -31,4 +31,8 @@ describe('LibraryEntryView', function() {
     SongModel.prototype.enqueue.restore();
   });
 
+  it('displays it\'s playCount', function() {
+    expect(view.$el.find('.playCount').length).to.be.above(0);
+  });
+
 });
