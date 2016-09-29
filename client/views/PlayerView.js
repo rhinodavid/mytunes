@@ -21,8 +21,7 @@ var PlayerView = Backbone.View.extend({
   },
 
   handleEnded: function() {
-    this.model.set('playCount', this.model.get('playCount') + 1);
-    this.model.dequeue();
+    this.model.ended();
   }
 
 });

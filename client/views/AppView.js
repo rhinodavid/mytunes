@@ -16,7 +16,7 @@ var AppView = Backbone.View.extend({
   },
 
   render: function() {
-    var $searchBar = $('<input type = "text" placeholder = "search"></input>').attr('id', 'search-bar');
+    var $searchBar = $('<div><input type = "text" placeholder = "search"></input></div>').attr('id', 'search-bar');
     return this.$el.html([
       this.playerView.$el, 
       $searchBar,

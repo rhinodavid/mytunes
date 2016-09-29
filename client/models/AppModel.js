@@ -32,7 +32,6 @@ var AppModel = Backbone.Model.extend({
     this.on('change:searchString', function() {
       params.library.search(this.get('searchString'));
     });
-
   }
 
   
