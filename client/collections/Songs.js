@@ -11,7 +11,7 @@ var Songs = Backbone.Collection.extend({
         this.reset(data.results);
       }.bind(this)
     });
-    this.search = _.throttle(this.search, 1500);
+    this.search = _.throttle(this.search, 1500, {leading: false});
   },
 
   search: function(searchString) {
