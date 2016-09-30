@@ -5,6 +5,7 @@ var SongQueueView = Backbone.View.extend({
 
   initialize: function() {
     this.render();
+
     this.collection.on('add remove', function() {
       this.render();
     }, this);
@@ -14,6 +15,7 @@ var SongQueueView = Backbone.View.extend({
     // render each song item and put them together into the $el
     this.$el.empty();
     this.$el.append('<h3>Song Queue</h3>');
+    
     var $ul = $('<ul />').addClass('queue');
     this.collection.forEach(this.renderSongEntry, $ul);
     $ul.appendTo(this.$el);

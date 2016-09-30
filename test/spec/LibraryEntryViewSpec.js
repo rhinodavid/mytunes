@@ -11,17 +11,6 @@ describe('LibraryEntryView', function() {
     view.render();
   });
 
-  // This spec passes already, but it's mutually exclusive with the one below.
-  // Comment it out when implementing the song queue.
-  // it ('plays clicked songs', function() {
-  //   sinon.spy(SongModel.prototype, 'play');
-
-  //   view.$el.children().first().click();
-  //   expect(model.play).to.have.been.called;
-
-  //   SongModel.prototype.play.restore();
-  // });
-
   it('queues clicked songs', function() {
     sinon.spy(SongModel.prototype, 'enqueue');
 
